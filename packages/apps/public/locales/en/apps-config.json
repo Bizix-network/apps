@@ -1,4 +1,5 @@
 {
+  "BiziX Node": "BiziX Node",
   "lightclient.experimental": "light client (experimental)",
   "lng.detect": "Default browser language (auto-detect)",
   "rpc.dev.custom": "Custom environment",

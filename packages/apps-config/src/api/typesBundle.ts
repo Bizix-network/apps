@@ -41976,6 +41976,225 @@ export const typesBundle = {
         }
       ]
     },
+    "bizix": {
+      "runtime": {
+        "BizixApi": [
+          {
+            "methods": {
+              "getValue": {
+                "description": "Get a value",
+                "params": [],
+                "type": "u32"
+              }
+            },
+            "version": 1
+          }
+        ],
+        "CompanyRegistryApi": [
+          {
+            "methods": {
+              "getCompanyData": {
+                "description": "Get company data",
+                "params": [
+                  {
+                    "name": "cui",
+                    "type": "Vec<u8>"
+                  }
+                ],
+                "type": "Option<Vec<u8>>"
+              },
+              "getQueryFee": {
+                "description": "Get query fee",
+                "params": [],
+                "type": "Balance"
+              }
+            },
+            "version": 1
+          }
+        ]
+      },
+      "rpc": {
+        "bizix": {
+          "getValue": {
+            "description": "Get a value",
+            "params": [],
+            "type": "u32"
+          }
+        },
+        "companyRegistry": {
+          "getCompanyData": {
+            "description": "Get company data",
+            "params": [
+              {
+                "name": "cui",
+                "type": "Vec<u8>"
+              }
+            ],
+            "type": "Option<Vec<u8>>"
+          },
+          "getQueryFee": {
+            "description": "Get query fee",
+            "params": [],
+            "type": "Balance"
+          }
+        }
+      },
+      "types": [
+        {
+          "minmax": [
+            0,
+            null
+          ],
+          "types": {}
+        }
+      ]
+    },
+    "BiziX Node": {
+      "runtime": {
+        "BizixApi": [
+          {
+            "methods": {
+              "getValue": {
+                "description": "Get a value",
+                "params": [],
+                "type": "u32"
+              }
+            },
+            "version": 1
+          }
+        ],
+        "CompanyRegistryApi": [
+          {
+            "methods": {
+              "getCompanyData": {
+                "description": "Get company data",
+                "params": [
+                  {
+                    "name": "cui",
+                    "type": "Vec<u8>"
+                  }
+                ],
+                "type": "Option<Vec<u8>>"
+              },
+              "getQueryFee": {
+                "description": "Get query fee",
+                "params": [],
+                "type": "Balance"
+              }
+            },
+            "version": 1
+          }
+        ]
+      },
+      "rpc": {
+        "bizix": {
+          "getValue": {
+            "description": "Get a value",
+            "params": [],
+            "type": "u32"
+          }
+        },
+        "companyRegistry": {
+          "getCompanyData": {
+            "description": "Get company data",
+            "params": [
+              {
+                "name": "cui",
+                "type": "Vec<u8>"
+              }
+            ],
+            "type": "Option<Vec<u8>>"
+          },
+          "getQueryFee": {
+            "description": "Get query fee",
+            "params": [],
+            "type": "Balance"
+          }
+        }
+      },
+      "types": [
+        {
+          "minmax": [
+            0,
+            null
+          ],
+          "types": {}
+        }
+      ]
+    },
+    "Development": {
+      "runtime": {
+        "BizixApi": [
+          {
+            "methods": {
+              "getValue": {
+                "description": "Get a value",
+                "params": [],
+                "type": "u32"
+              }
+            },
+            "version": 1
+          }
+        ],
+        "CompanyRegistryApi": [
+          {
+            "methods": {
+              "getCompanyData": {
+                "description": "Get company data",
+                "params": [
+                  {
+                    "name": "cui",
+                    "type": "Vec<u8>"
+                  }
+                ],
+                "type": "Option<Vec<u8>>"
+              },
+              "getQueryFee": {
+                "description": "Get query fee",
+                "params": [],
+                "type": "Balance"
+              }
+            },
+            "version": 1
+          }
+        ]
+      },
+      "rpc": {
+        "bizix": {
+          "getValue": {
+            "description": "Get a value",
+            "params": [],
+            "type": "u32"
+          }
+        },
+        "companyRegistry": {
+          "getCompanyData": {
+            "description": "Get company data",
+            "params": [
+              {
+                "name": "cui",
+                "type": "Vec<u8>"
+              }
+            ],
+            "type": "Option<Vec<u8>>"
+          },
+          "getQueryFee": {
+            "description": "Get query fee",
+            "params": [],
+            "type": "Balance"
+          }
+        }
+      },
+      "types": [
+        {
+          "minmax": [
+            0,
+            null
+          ],
+          "types": {}
+        }
+      ]
+    },
     "centrifuge": {
       "types": [
         {

@@ -67,12 +67,12 @@ export function createOwn (t: TFunction): LinkOption[] {
 export function createDev (t: TFunction): LinkOption[] {
   return [
     {
-      dnslink: 'local',
-      info: 'local',
-      text: t('rpc.dev.local', 'Local Node', { ns: 'apps-config' }),
+      dnslink: 'bizix',
+      info: 'bizix',
+      text: t('BiziX Node', 'BiziX Node', { ns: 'apps-config' }),
       textBy: '127.0.0.1:9944',
       ui: {},
       value: 'ws://127.0.0.1:9944'
-    }
+    },
   ];
 }

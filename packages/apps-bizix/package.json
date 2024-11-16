@@ -1,0 +1,19 @@
+{
+  "name": "@polkadot/apps-bizix",
+  "private": true,
+  "type": "module",
+  "version": "0.140.2-3-x",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@polkadot/react-components": "^0.140.2-3-x",
+    "@polkadot/react-hooks": "^0.140.2-3-x",
+    "@polkadot/react-query": "^0.140.2-3-x"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-is": "*",
+    "react-router": "*",
+    "react-router-dom": "*"
+  }
+}

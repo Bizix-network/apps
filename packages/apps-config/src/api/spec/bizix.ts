@@ -3,6 +3,7 @@
 
 import type { OverrideBundleDefinition } from '@polkadot/types/types';
 
+
 // structs need to be in order
 /* eslint-disable sort-keys */
 
@@ -21,7 +22,8 @@ const definitions: OverrideBundleDefinition = {
           stare_firma: 'Vec<u8>',
           adresa_completa: 'Vec<u8>',
           owner: 'Option<AccountId>'
-        }
+        },
+        TokenSymbol:'BIZ',
       }
     }
   ],
@@ -78,7 +80,7 @@ const definitions: OverrideBundleDefinition = {
         type: 'Option<Company>'
       }
     }
-  },
+  }
 };
 
 export default definitions;

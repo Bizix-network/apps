@@ -51,7 +51,7 @@ function combineEndpoints (endpoints: LinkOption[]): Group[] {
       result.push({ header: 'Default Group', isDevelopment: false, networks: [] });
       const prev = result[0];
       const prov = { isLightClient: e.isLightClient, name: e.textBy, url: e.value };
-      
+
       if (!e.isUnreachable) {
         prev.networks.push({
           isChild: e.isChild,

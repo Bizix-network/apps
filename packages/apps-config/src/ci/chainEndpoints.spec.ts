@@ -4,6 +4,7 @@
 /// <reference types="@polkadot/dev-test/globals.d.ts" />
 
 import { isString } from '@polkadot/util';
+
 import { createWsEndpoints } from '../endpoints/index.js';
 
 interface Endpoint {

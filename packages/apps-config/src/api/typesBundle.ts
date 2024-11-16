@@ -41993,7 +41993,8 @@ export const typesBundle = {
               "stare_firma": "Vec<u8>",
               "adresa_completa": "Vec<u8>",
               "owner": "Option<AccountId>"
-            }
+            },
+            "TokenSymbol": "BIZ"
           }
         }
       ],
@@ -42068,7 +42069,8 @@ export const typesBundle = {
               "stare_firma": "Vec<u8>",
               "adresa_completa": "Vec<u8>",
               "owner": "Option<AccountId>"
-            }
+            },
+            "TokenSymbol": "BIZ"
           }
         }
       ],
@@ -42143,7 +42145,8 @@ export const typesBundle = {
               "stare_firma": "Vec<u8>",
               "adresa_completa": "Vec<u8>",
               "owner": "Option<AccountId>"
-            }
+            },
+            "TokenSymbol": "BIZ"
           }
         }
       ],

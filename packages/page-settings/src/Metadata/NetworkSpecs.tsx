@@ -40,7 +40,7 @@ const initialState = {
   genesisHash: '',
   prefix: 0,
   title: '',
-  unit: 'UNIT'
+  unit: 'BIZ'
 };
 
 function NetworkSpecs ({ chainInfo, className }: Props): React.ReactElement<Props> {
@@ -70,7 +70,7 @@ function NetworkSpecs ({ chainInfo, className }: Props): React.ReactElement<Prop
       genesisHash: chainInfo.genesisHash,
       prefix: chainInfo.ss58Format,
       title: systemChain,
-      unit: chainInfo.tokenSymbol
+      unit: "BIZ"
     });
   }, [chainInfo, systemChain]);
 

@@ -17,7 +17,7 @@ export * from './testingRelayWestend.js';
 //
 // IMPORTANT: Alphabetical based on text
 export const testChains: Omit<EndpointOption, 'teleport'>[] = [
- 
+
   {
     info: '3dpass-testnet',
     providers: {

@@ -159,7 +159,7 @@ async function loadOnReady (api: ApiPromise, endpoint: LinkOption | null, fork: 
   // first setup the UI helpers
   formatBalance.setDefaults({
     decimals: tokenDecimals.map((b) => b.toNumber()),
-    unit: tokenSymbol[0].toString()
+    unit: "BIZ"
   });
   TokenUnit.setAbbr(tokenSymbol[0].toString());
 

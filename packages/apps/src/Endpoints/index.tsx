@@ -46,11 +46,28 @@ function combineEndpoints (endpoints: LinkOption[]): Group[] {
   return endpoints.reduce((result: Group[], e): Group[] => {
     if (e.isHeader) {
       result.push({ header: e.text, isDevelopment: e.isDevelopment, isSpaced: e.isSpaced, networks: [] });
+    } else if (result.length === 0) {
+      // Dacă nu avem niciun grup, creăm unul implicit
+      result.push({ header: 'Default Group', isDevelopment: false, networks: [] });
+      const prev = result[0];
+      const prov = { isLightClient: e.isLightClient, name: e.textBy, url: e.value };
+      
+      if (!e.isUnreachable) {
+        prev.networks.push({
+          isChild: e.isChild,
+          isRelay: !!e.genesisHash,
+          name: e.text as string,
+          nameRelay: e.textRelay as string,
+          paraId: e.paraId,
+          providers: [prov],
+          ui: e.ui
+        });
+      }
     } else {
       const prev = result[result.length - 1];
       const prov = { isLightClient: e.isLightClient, name: e.textBy, url: e.value };
 
-      if (prev.networks[prev.networks.length - 1] && e.text === prev.networks[prev.networks.length - 1].name) {
+      if (prev.networks.length > 0 && e.text === prev.networks[prev.networks.length - 1].name) {
         prev.networks[prev.networks.length - 1].providers.push(prov);
       } else if (!e.isUnreachable) {
         prev.networks.push({

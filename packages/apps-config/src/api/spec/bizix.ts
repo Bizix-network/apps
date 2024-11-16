@@ -7,79 +7,78 @@ import type { OverrideBundleDefinition } from '@polkadot/types/types';
 /* eslint-disable sort-keys */
 
 const definitions: OverrideBundleDefinition = {
-  runtime: {
-    BizixApi: [
-      {
-        methods: {
-          getValue: {
-            description: 'Get a value',
-            params: [],
-            type: 'u32'
-          }
-          // Adăugați alte metode ale BizixApi aici
-        },
-        version: 1
+  types: [
+    {
+      // on all versions
+      minmax: [0, undefined],
+      types: {
+        CUI: 'u16',
+        Company: {
+          cui: 'CUI',
+          denumire: 'Vec<u8>',
+          cod_inmatriculare: 'Vec<u8>',
+          euid: 'Vec<u8>',
+          stare_firma: 'Vec<u8>',
+          adresa_completa: 'Vec<u8>',
+          owner: 'Option<AccountId>'
+        }
       }
-    ],
-    CompanyRegistryApi: [
-      {
-        methods: {
-          getCompanyData: {
-            description: 'Get company data',
-            params: [
-              {
-                name: 'cui',
-                type: 'Vec<u8>'
-              }
-            ],
-            type: 'Option<Vec<u8>>'
-          },
-          getQueryFee: {
-            description: 'Get query fee',
-            params: [],
-            type: 'Balance'
-          }
-          // Adăugați alte metode ale CompanyRegistryApi aici
-        },
-        version: 1
-      }
-    ]
-  },
+    }
+  ],
   rpc: {
-    bizix: {
-      getValue: {
-        description: 'Get a value',
-        params: [],
-        type: 'u32'
-      }
-    },
     companyRegistry: {
       getCompanyData: {
         description: 'Get company data',
         params: [
           {
             name: 'cui',
-            type: 'Vec<u8>'
+            type: 'CUI'
+          },
+          {
+            name: 'caller',
+            type: 'AccountId'
+          },
+          {
+            name: 'at',
+            type: 'Hash',
+            isOptional: true
           }
         ],
-        type: 'Option<Vec<u8>>'
+        type: 'Option<Company>'
       },
       getQueryFee: {
         description: 'Get query fee',
-        params: [],
+        params: [
+          {
+            name: 'at',
+            type: 'Hash',
+            isOptional: true
+          }
+        ],
         type: 'Balance'
+      },
+      // Adăugăm noua metodă RPC
+      getCompanyDataIfPaid: {
+        description: 'Get company data if paid',
+        params: [
+          {
+            name: 'cui',
+            type: 'CUI'
+          },
+          {
+            name: 'caller',
+            type: 'AccountId'
+          },
+          {
+            name: 'at',
+            type: 'Hash',
+            isOptional: true
+          }
+        ],
+        type: 'Option<Company>'
       }
     }
   },
-  types: [
-    {
-      // on all versions
-      minmax: [0, undefined],
-      types: {
-        // adăugați aici orice tipuri personalizate dacă este necesar
-      }
-    }
-  ],
 };
 
 export default definitions;

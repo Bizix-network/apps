@@ -15,7 +15,7 @@ interface Endpoint {
   value: string;
 }
 
-const allEndpoints = createWsEndpoints(undefined, false, false);
+const allEndpoints = createWsEndpoints();
 
 const INVALID_CHARS = ['%'];
 
@@ -149,4 +149,13 @@ describe('endpopints naming', (): void => {
       });
     });
   }
+});
+
+describe('endpoints', (): void => {
+  it('creates a list of endpoints', (): void => {
+    const allEndpoints = createWsEndpoints();
+
+    expect(allEndpoints).toBeTruthy();
+    expect(Array.isArray(allEndpoints)).toBe(true);
+  });
 });

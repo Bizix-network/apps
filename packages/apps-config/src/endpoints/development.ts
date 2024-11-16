@@ -70,9 +70,17 @@ export function createDev (t: TFunction): LinkOption[] {
       dnslink: 'bizix',
       info: 'bizix',
       text: t('BiziX Node', 'BiziX Node', { ns: 'apps-config' }),
+      textBy: 'wss://rpc.bizix.network',
+      ui: {},
+      value: 'wss://rpc.bizix.network'
+    },
+    {
+      dnslink: 'local',
+      info: 'local',
+      text: t('Local Node', 'Local Node', { ns: 'apps-config' }),
       textBy: '127.0.0.1:9944',
       ui: {},
       value: 'ws://127.0.0.1:9944'
-    },
+    }
   ];
 }

@@ -3,7 +3,7 @@
 
 import React, { useCallback, useState } from 'react';
 
-import { Button, Input, TxButton } from '@polkadot/react-components';
+import { Button, Input, TxButton , InputAddress } from '@polkadot/react-components';
 import { useApi, useToggle } from '@polkadot/react-hooks';
 import { Available } from '@polkadot/react-query';
 
@@ -14,7 +14,7 @@ function ProposalForm ({ className }: { className: string }) {
   const [version, setVersion] = useState('');
   const [templateId, setTemplateId] = useState('');
   const [isSubmitting, toggleIsSubmitting] = useToggle();
-  const [accountId, setAccountId] = useState<string | null>(null);
+  const [selectedAccount, setSelectedAccount] = useState<string | null>(null);
 
   const _onChangeIpfs = useCallback(
     (value: string) => setIpfsAddress(value),
@@ -36,11 +36,18 @@ function ProposalForm ({ className }: { className: string }) {
     []
   );
 
-  const isValid = ipfsAddress && name && version && templateId && accountId;
+  const isValid = ipfsAddress && name && version && templateId && selectedAccount;
 
   return (
     <div className={className}>
       <h2>Trimite o nouă propunere</h2>
+      <InputAddress
+        label='Cont utilizator'
+        type='account'
+        value={selectedAccount}
+        onChange={setSelectedAccount}
+        placeholder='Selectează contul'
+      />
       <Input
         autoFocus
         label='Adresă IPFS'
@@ -62,8 +69,8 @@ function ProposalForm ({ className }: { className: string }) {
         onChange={_onChangeTemplate}
         value={templateId}
       />
-      <TxButton
-        accountId={accountId}
+  <TxButton
+        accountId={selectedAccount}
         icon='plus'
         isDisabled={!isValid}
         label='Trimite Propunere'
@@ -73,6 +80,7 @@ function ProposalForm ({ className }: { className: string }) {
           setName('');
           setVersion('');
           setTemplateId('');
+          setSelectedAccount(null);
           toggleIsSubmitting();
         }}
         params={[ipfsAddress, name, version, templateId]}
